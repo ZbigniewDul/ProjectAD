@@ -47,6 +47,12 @@ namespace ProjectAD
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (dgvMain.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Proszę zaznaczyć dokument, który chcesz usunąć.");
+                return;
+            }
+
             int documentIdToDelete = Convert.ToInt32(dgvMain.SelectedRows[0].Cells[0].Value);
 
             List<Document> documents = _fileHelperBasic.DeserializeFromFile();
