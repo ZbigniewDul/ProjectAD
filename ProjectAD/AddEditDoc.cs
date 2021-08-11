@@ -80,7 +80,8 @@ namespace ProjectAD
             };
 
             documents.Add(document);
-            _fileHelperBasic.SerializeToFile(documents);
+            List<Document> documentsOrderByDate = documents.OrderBy(x => x.CreatedDate).ToList();
+            _fileHelperBasic.SerializeToFile(documentsOrderByDate);
 
             if (cbAddEditDoc.SelectedIndex == 0)
                 SaveDocumentWhichIsResolution(document);
@@ -118,14 +119,16 @@ namespace ProjectAD
             _fileHelper = new FileHelper<List<Document>>(Program.FilePathToProtocols);
             List<Document> documentsWhichAreProtocols = _fileHelper.DeserializeFromFile();
             documentsWhichAreProtocols.Add(document);
-            _fileHelper.SerializeToFile(documentsWhichAreProtocols);
+            List<Document> documentsOrderByDate = documentsWhichAreProtocols.OrderBy(x => x.CreatedDate).ToList();
+            _fileHelper.SerializeToFile(documentsOrderByDate);
         }
         private void SaveDocumentWhichIsResolution(Document document)
         {
             _fileHelper = new FileHelper<List<Document>>(Program.FilePathToResolutions);
             List<Document> documentsWhichAreResolutions = _fileHelper.DeserializeFromFile();
             documentsWhichAreResolutions.Add(document);
-            _fileHelper.SerializeToFile(documentsWhichAreResolutions);
+            List<Document> documentsOrderByDate = documentsWhichAreResolutions.OrderBy(x => x.CreatedDate).ToList();
+            _fileHelper.SerializeToFile(documentsOrderByDate);
         }
         private void UpdateDocumentWhichWasProtocol()
         {

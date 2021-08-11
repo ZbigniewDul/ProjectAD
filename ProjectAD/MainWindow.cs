@@ -125,6 +125,12 @@ namespace ProjectAD
             List<Document> documents = _fileHelperBasic.DeserializeFromFile();
             Document documentToDisplay = documents.FirstOrDefault(x => x.Id == documentIdWhichWillBeDisplay);
 
+            if (string.IsNullOrWhiteSpace(documentToDisplay.DocPath))
+            {
+                MessageBox.Show("Ścieżka do wybranego dokumentu jest nieprawidłowa.", "Zła ścieżka");
+                return;
+            }
+
             object readOnly = false;
             object visible = true;
             object save = false;
