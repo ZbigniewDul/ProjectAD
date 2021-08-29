@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProjectAD
@@ -41,7 +36,7 @@ namespace ProjectAD
                 MessageBox.Show("Proszę zaznaczyć dokument, który chcesz edytować.");
                 return;
             }
-            AddEditDoc editDoc = new AddEditDoc(Convert.ToInt32(dgvMain.SelectedRows[0].Cells[0].Value));
+            AddEditDoc editDoc = new AddEditDoc(Convert.ToInt32(dgvMain.SelectedRows[0].Cells[5].Value));
             editDoc.ShowDialog();
             RefreshDataGridView();
         }
@@ -54,7 +49,7 @@ namespace ProjectAD
                 return;
             }
 
-            int documentIdToDelete = Convert.ToInt32(dgvMain.SelectedRows[0].Cells[0].Value);
+            int documentIdToDelete = Convert.ToInt32(dgvMain.SelectedRows[0].Cells[5].Value);
 
             List<Document> documents = _fileHelperBasic.DeserializeFromFile();
             Document documentToDelete = documents.FirstOrDefault(x => x.Id == documentIdToDelete);
@@ -97,7 +92,7 @@ namespace ProjectAD
         }
         private void btnPreView_Click(object sender, EventArgs e)
         {
-            int documentIdWhichWillBeDisplay = Convert.ToInt32(dgvMain.SelectedRows[0].Cells[0].Value);
+            int documentIdWhichWillBeDisplay = Convert.ToInt32(dgvMain.SelectedRows[0].Cells[5].Value);
             Cursor.Current = Cursors.WaitCursor;
             RefreshRichTextBox(documentIdWhichWillBeDisplay);
         }
@@ -154,15 +149,15 @@ namespace ProjectAD
 
         private void SetColumnsProperties()
         {
-            dgvMain.Columns[0].Visible = false;
-            dgvMain.Columns[4].Visible = false;
+            dgvMain.Columns[5].Visible = false; //ID
             dgvMain.Columns[6].Visible = false;
-            dgvMain.Columns[1].HeaderText = "Nazwa";
-            dgvMain.Columns[2].HeaderText = "Termin wykonania";
-            dgvMain.Columns[3].HeaderText = "Rodzaj";
-            dgvMain.Columns[5].HeaderText = "Opis";
-            dgvMain.Columns[7].HeaderText = "Odpowiedzialny";
-            dgvMain.Columns[2].DefaultCellStyle.Format = "d";
+            dgvMain.Columns[7].Visible = false;
+            dgvMain.Columns[0].HeaderText = "Nazwa";
+            dgvMain.Columns[1].HeaderText = "Termin wykonania";
+            dgvMain.Columns[4].HeaderText = "Rodzaj";
+            dgvMain.Columns[3].HeaderText = "Opis";
+            dgvMain.Columns[2].HeaderText = "Odpowiedzialny";
+            dgvMain.Columns[1].DefaultCellStyle.Format = "d";
         }
 
         private void CreatNecessaryFilesAndFolders()
@@ -205,7 +200,7 @@ namespace ProjectAD
 
         private void btnGenerateWordFile_Click(object sender, EventArgs e)
         {
-            ExportDataGridToWordTable.ExportToWord(dgvMain);
+            ExportDocumentToWordTable.ExportToWord();
         }
     }
 }
