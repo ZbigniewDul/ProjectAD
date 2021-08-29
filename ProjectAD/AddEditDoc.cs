@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProjectAD
@@ -37,7 +33,7 @@ namespace ProjectAD
             {
                 ValidateNames = true,
                 Multiselect = false,
-                Filter = "Word 97-2003|*.doc|Word Document|*.docx"
+                Filter = "Word Document|*.docx|Word 97-2003|*.doc"
             })
             {
                 if (ofd.ShowDialog() == DialogResult.OK)
@@ -76,7 +72,8 @@ namespace ProjectAD
                 DocType = cbAddEditDoc.Text,
                 DocPath = _docPath,
                 Description = rtbDescription.Text,
-                DocFileName = tbDocPath.Text
+                DocFileName = tbDocPath.Text,
+                PersonWhoHasBeenResponsible = tbPersonWhoHasBeenResposible.Text
             };
 
             documents.Add(document);
@@ -107,6 +104,7 @@ namespace ProjectAD
             tbDocPath.Text = documentToUpdate.DocFileName;
             rtbDescription.Text = documentToUpdate.Description;
             _docPath = documentToUpdate.DocPath;
+            tbPersonWhoHasBeenResposible.Text = documentToUpdate.PersonWhoHasBeenResponsible;
         }
         private void GetDocType()
         {

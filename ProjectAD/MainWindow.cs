@@ -19,6 +19,7 @@ namespace ProjectAD
         public MainWindow()
         {
             InitializeComponent();
+            FullScreen.EnterFullScreenMode(this);
             _fileHelper = _fileHelperBasic;
             GetDocsTypeName();
             CreatNecessaryFilesAndFolders();
@@ -97,6 +98,7 @@ namespace ProjectAD
         private void btnPreView_Click(object sender, EventArgs e)
         {
             int documentIdWhichWillBeDisplay = Convert.ToInt32(dgvMain.SelectedRows[0].Cells[0].Value);
+            Cursor.Current = Cursors.WaitCursor;
             RefreshRichTextBox(documentIdWhichWillBeDisplay);
         }
         private void RefreshDataGridView()
@@ -156,9 +158,10 @@ namespace ProjectAD
             dgvMain.Columns[4].Visible = false;
             dgvMain.Columns[6].Visible = false;
             dgvMain.Columns[1].HeaderText = "Nazwa";
-            dgvMain.Columns[2].HeaderText = "Data utworzenia";
+            dgvMain.Columns[2].HeaderText = "Termin wykonania";
             dgvMain.Columns[3].HeaderText = "Rodzaj";
             dgvMain.Columns[5].HeaderText = "Opis";
+            dgvMain.Columns[7].HeaderText = "Odpowiedzialny";
             dgvMain.Columns[2].DefaultCellStyle.Format = "d";
         }
 
@@ -198,6 +201,11 @@ namespace ProjectAD
             List<Document> documents = _fileHelper.DeserializeFromFile();
             documents.RemoveAll(x => x.Id == id);
             _fileHelper.SerializeToFile(documents);
+        }
+
+        private void btnGenerateWordFile_Click(object sender, EventArgs e)
+        {
+            ExportDataGridToWordTable.ExportToWord(dgvMain);
         }
     }
 }

@@ -61,7 +61,9 @@
       <DependentUpon>AddEditDoc.cs</DependentUpon>
     </Compile>
     <Compile Include="Document.cs" />
+    <Compile Include="ExportDataGridToWordTable.cs" />
     <Compile Include="FileHelper.cs" />
+    <Compile Include="FullScreen.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>

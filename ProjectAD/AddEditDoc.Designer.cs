@@ -41,65 +41,74 @@ namespace ProjectAD
             this.rtbDescription = new System.Windows.Forms.RichTextBox();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.lblPersonWhoHasBeenResposible = new System.Windows.Forms.Label();
+            this.tbPersonWhoHasBeenResposible = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(149, 21);
+            this.tbName.Location = new System.Drawing.Point(130, 17);
+            this.tbName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(215, 22);
+            this.tbName.Size = new System.Drawing.Size(144, 20);
             this.tbName.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 24);
+            this.label1.Location = new System.Drawing.Point(10, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 17);
+            this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nazwa:";
             // 
             // lbCreatedDate
             // 
             this.lbCreatedDate.AutoSize = true;
-            this.lbCreatedDate.Location = new System.Drawing.Point(14, 70);
+            this.lbCreatedDate.Location = new System.Drawing.Point(10, 84);
+            this.lbCreatedDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCreatedDate.Name = "lbCreatedDate";
-            this.lbCreatedDate.Size = new System.Drawing.Size(114, 17);
+            this.lbCreatedDate.Size = new System.Drawing.Size(96, 13);
             this.lbCreatedDate.TabIndex = 3;
-            this.lbCreatedDate.Text = "Data utworzenia:";
+            this.lbCreatedDate.Text = "Termin wykonania:";
             // 
             // dtpCreateDate
             // 
             this.dtpCreateDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpCreateDate.Location = new System.Drawing.Point(149, 65);
+            this.dtpCreateDate.Location = new System.Drawing.Point(130, 80);
+            this.dtpCreateDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpCreateDate.Name = "dtpCreateDate";
-            this.dtpCreateDate.Size = new System.Drawing.Size(215, 22);
+            this.dtpCreateDate.Size = new System.Drawing.Size(144, 20);
             this.dtpCreateDate.TabIndex = 4;
             // 
             // cbAddEditDoc
             // 
             this.cbAddEditDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAddEditDoc.FormattingEnabled = true;
-            this.cbAddEditDoc.Location = new System.Drawing.Point(149, 108);
+            this.cbAddEditDoc.Location = new System.Drawing.Point(130, 115);
+            this.cbAddEditDoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbAddEditDoc.Name = "cbAddEditDoc";
-            this.cbAddEditDoc.Size = new System.Drawing.Size(215, 24);
+            this.cbAddEditDoc.Size = new System.Drawing.Size(144, 21);
             this.cbAddEditDoc.TabIndex = 5;
             // 
             // lbDocType
             // 
             this.lbDocType.AutoSize = true;
-            this.lbDocType.Location = new System.Drawing.Point(14, 111);
+            this.lbDocType.Location = new System.Drawing.Point(10, 117);
+            this.lbDocType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDocType.Name = "lbDocType";
-            this.lbDocType.Size = new System.Drawing.Size(56, 17);
+            this.lbDocType.Size = new System.Drawing.Size(43, 13);
             this.lbDocType.TabIndex = 6;
             this.lbDocType.Text = "Rodzaj:";
             // 
             // btnSelectedFile
             // 
             this.btnSelectedFile.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnSelectedFile.Location = new System.Drawing.Point(17, 154);
+            this.btnSelectedFile.Location = new System.Drawing.Point(13, 152);
+            this.btnSelectedFile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSelectedFile.Name = "btnSelectedFile";
-            this.btnSelectedFile.Size = new System.Drawing.Size(89, 36);
+            this.btnSelectedFile.Size = new System.Drawing.Size(67, 29);
             this.btnSelectedFile.TabIndex = 7;
             this.btnSelectedFile.Text = "&Wybierz";
             this.btnSelectedFile.UseVisualStyleBackColor = false;
@@ -107,35 +116,39 @@ namespace ProjectAD
             // 
             // tbDocPath
             // 
-            this.tbDocPath.Location = new System.Drawing.Point(149, 161);
+            this.tbDocPath.Location = new System.Drawing.Point(130, 158);
+            this.tbDocPath.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbDocPath.Name = "tbDocPath";
             this.tbDocPath.ReadOnly = true;
-            this.tbDocPath.Size = new System.Drawing.Size(215, 22);
+            this.tbDocPath.Size = new System.Drawing.Size(144, 20);
             this.tbDocPath.TabIndex = 8;
             // 
             // lbDescription
             // 
             this.lbDescription.AutoSize = true;
-            this.lbDescription.Location = new System.Drawing.Point(14, 215);
+            this.lbDescription.Location = new System.Drawing.Point(10, 202);
+            this.lbDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDescription.Name = "lbDescription";
-            this.lbDescription.Size = new System.Drawing.Size(41, 17);
+            this.lbDescription.Size = new System.Drawing.Size(31, 13);
             this.lbDescription.TabIndex = 9;
             this.lbDescription.Text = "Opis:";
             // 
             // rtbDescription
             // 
-            this.rtbDescription.Location = new System.Drawing.Point(149, 212);
+            this.rtbDescription.Location = new System.Drawing.Point(45, 199);
+            this.rtbDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rtbDescription.Name = "rtbDescription";
-            this.rtbDescription.Size = new System.Drawing.Size(215, 78);
+            this.rtbDescription.Size = new System.Drawing.Size(229, 64);
             this.rtbDescription.TabIndex = 10;
             this.rtbDescription.Text = "";
             // 
             // btnConfirm
             // 
             this.btnConfirm.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnConfirm.Location = new System.Drawing.Point(149, 296);
+            this.btnConfirm.Location = new System.Drawing.Point(112, 267);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(92, 44);
+            this.btnConfirm.Size = new System.Drawing.Size(69, 36);
             this.btnConfirm.TabIndex = 11;
             this.btnConfirm.Text = "&Zatwierdź";
             this.btnConfirm.UseVisualStyleBackColor = false;
@@ -144,19 +157,40 @@ namespace ProjectAD
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.OrangeRed;
-            this.btnCancel.Location = new System.Drawing.Point(272, 296);
+            this.btnCancel.Location = new System.Drawing.Point(204, 267);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(92, 44);
+            this.btnCancel.Size = new System.Drawing.Size(69, 36);
             this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "&Anuluj";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // lblPersonWhoHasBeenResposible
+            // 
+            this.lblPersonWhoHasBeenResposible.AutoSize = true;
+            this.lblPersonWhoHasBeenResposible.Location = new System.Drawing.Point(9, 44);
+            this.lblPersonWhoHasBeenResposible.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPersonWhoHasBeenResposible.Name = "lblPersonWhoHasBeenResposible";
+            this.lblPersonWhoHasBeenResposible.Size = new System.Drawing.Size(117, 13);
+            this.lblPersonWhoHasBeenResposible.TabIndex = 14;
+            this.lblPersonWhoHasBeenResposible.Text = "Osoba odpowiedzialna:";
+            // 
+            // tbPersonWhoHasBeenResposible
+            // 
+            this.tbPersonWhoHasBeenResposible.Location = new System.Drawing.Point(130, 41);
+            this.tbPersonWhoHasBeenResposible.Margin = new System.Windows.Forms.Padding(2);
+            this.tbPersonWhoHasBeenResposible.Name = "tbPersonWhoHasBeenResposible";
+            this.tbPersonWhoHasBeenResposible.Size = new System.Drawing.Size(143, 20);
+            this.tbPersonWhoHasBeenResposible.TabIndex = 13;
+            // 
             // AddEditDoc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 378);
+            this.ClientSize = new System.Drawing.Size(304, 314);
+            this.Controls.Add(this.lblPersonWhoHasBeenResposible);
+            this.Controls.Add(this.tbPersonWhoHasBeenResposible);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.rtbDescription);
@@ -169,8 +203,9 @@ namespace ProjectAD
             this.Controls.Add(this.lbCreatedDate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbName);
-            this.MaximumSize = new System.Drawing.Size(422, 425);
-            this.MinimumSize = new System.Drawing.Size(422, 425);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(320, 353);
+            this.MinimumSize = new System.Drawing.Size(320, 353);
             this.Name = "AddEditDoc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodawanie dokumentu";
@@ -193,5 +228,7 @@ namespace ProjectAD
         private System.Windows.Forms.RichTextBox rtbDescription;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label lblPersonWhoHasBeenResposible;
+        private System.Windows.Forms.TextBox tbPersonWhoHasBeenResposible;
     }
 }
